@@ -1,24 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import { Box, Button, Paper } from "@mui/material";
+import "./App.css";
+import Timeline from "./Timeline";
+import { useState } from "react";
 
 function App() {
+  const [visibleDays, setVisibleDays] = useState(7);
+  const timelineStart = 0; //in days
+  const timelineEnd = 100; // in
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <Box>
+      <Box sx={{ position: "fixed", top: "120px" }}>
+        <Button
+          variant="contained"
+          sx={{ m: 1 }}
+          onClick={() => setVisibleDays(7)}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          7
+        </Button>
+        <Button
+          variant="contained"
+          sx={{ m: 1 }}
+          onClick={() => setVisibleDays(31)}
+        >
+          31
+        </Button>
+      </Box>
+      <Timeline
+        visibleDays={visibleDays}
+        timelineStart={timelineStart}
+        timelineEnd={timelineEnd}
+      />
+    </Box>
   );
 }
 
