@@ -13,7 +13,7 @@ export default function Timeline(props) {
   return (
     <AnimatedBox
       animate={{ width: `${zoom}%` }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 3 }}
       sx={{ display: "flex" }}
       onAnimationStart={() => {
         console.log(zoom);
@@ -25,7 +25,6 @@ export default function Timeline(props) {
           sx={{
             backgroundColor: "#aaaaaa",
             borderColor: "#ffffff",
-            width: "100px",
             height: "100px",
             margin: "10px",
             flex: 1,
