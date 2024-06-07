@@ -26,7 +26,7 @@ export default function Timeline(props) {
             backgroundColor: "#aaaaaa",
             borderColor: "#ffffff",
             height: "100px",
-            margin: "10px",
+            margin: "2px",
             flex: 1,
           }}
         ></Paper>
