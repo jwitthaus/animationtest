@@ -15,8 +15,8 @@ export default function Timeline(props) {
       animate={{ width: `${zoom}%` }}
       transition={{ duration: 3 }}
       sx={{ display: "flex" }}
-      onAnimationStart={() => {
-        console.log(zoom);
+      onUpdate={(latest) => {
+        console.log(latest);
       }}
     >
       {new Array(timelineLength).fill(0).map((_, index) => (
@@ -24,9 +24,8 @@ export default function Timeline(props) {
           key={index}
           sx={{
             backgroundColor: "#aaaaaa",
-            borderColor: "#ffffff",
             height: "100px",
-            margin: "10px",
+            margin: "2px",
             flex: 1,
           }}
         ></Paper>
