@@ -2,6 +2,7 @@ import { Box, Button, Paper } from "@mui/material";
 import "./App.css";
 import Timeline from "./Timeline";
 import { useState } from "react";
+import ScrollContainer from "react-indiana-drag-scroll";
 
 function App() {
   const [visibleDays, setVisibleDays] = useState(7);
@@ -26,11 +27,13 @@ function App() {
           31
         </Button>
       </Box>
-      <Timeline
-        visibleDays={visibleDays}
-        timelineStart={timelineStart}
-        timelineEnd={timelineEnd}
-      />
+      <ScrollContainer className="scroll-container">
+        <Timeline
+          visibleDays={visibleDays}
+          timelineStart={timelineStart}
+          timelineEnd={timelineEnd}
+        />
+      </ScrollContainer>
     </Box>
   );
 }
